@@ -1,0 +1,40 @@
+---
+title: "presentation"
+author: "maisam"
+date: "5/30/2020"
+output: slidy_presentation
+theme : sandstone
+highlight : pygments
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction
+
+This presentation is part of the assignment for week 4 of Developing Data Products course from Coursera (https://www.coursera.org/learn/data-products). It is meant to describe and pitch information about an app developed through Shiny to help property investors determine profitability of a specific property they are interested in investing in
+
+## Application
+
+1)In the application, anyone who is interested in purchasing property for investment purposes can input the purchase price or market value of a property and derive a range of weekly rents necessary to make a profit on the property. The output is generated through calculations programmed in R.
+
+2)The application allows users to include associated costs for owning property that might affect profitability like water usage and community fees (taxes).
+
+3) THe application can be found here :https://mraza8149.shinyapps.io/new_assignment/ 
+
+
+## Example R Code
+
+```{r  echo=TRUE}
+rent<-350
+water<-50
+fees<-10
+mortgage<-200
+  result <- (rent * 52 - (water) * 4 - fees * 52 - mortgage * 52) / 52
+  return(round(result, digits = 2))
+```
+
+## Conclusion
+
+This app can be a very useful tool for property investors looking to do a quick calculation to deterine profitability. The github repository containing the Shiny programs (ui.R and server.R) are found here: https://github.com/maisam8149/developing-data-products
